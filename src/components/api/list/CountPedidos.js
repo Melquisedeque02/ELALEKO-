@@ -1,0 +1,12 @@
+import api from '../token';
+
+export const CountPedidos = async () => {
+  try {
+    const response = await api.post('/CountPedidos');
+    return response.data;
+  } catch (error) {
+    console.error('Erro ao buscar produtos:', error);
+    return [];
+  }
+};
+

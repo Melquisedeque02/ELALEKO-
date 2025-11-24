@@ -1,0 +1,148 @@
+.qr-login-container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.qr-login-bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  filter: blur(6px);
+  transform: scale(1.1);
+}
+
+
+.qr-login-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(4px);
+}
+
+.qr-login-card {
+  position: relative;
+  z-index: 2;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 20px;
+  padding: 40px 50px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+
+.qr-logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qr-logo {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  margin-bottom: 10px;
+}
+
+.qr-title {
+  font-size: 28px;
+  font-weight: 700;
+  color: #c79a3f;
+  letter-spacing: 1px;
+}
+
+.qr-subtitle {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 25px;
+}
+
+.qr-input {
+  width: 100%;
+  padding: 12px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background: transparent;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.qr-input:focus {
+  border-color: #c79a3f;
+}
+
+.qr-input.error {
+  border-color: #e74c3c;
+}
+
+.error-message {
+  font-size: 12px;
+  color: #e74c3c;
+  margin-top: 5px;
+  text-align: left;
+}
+
+.password-group {
+  position: relative;
+}
+
+.toggle-password {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  color: #777;
+  cursor: pointer;
+}
+
+.qr-button {
+  width: 100%;
+  background: linear-gradient(135deg, #c79a3f, #f4d58d);
+  border: none;
+  border-radius: 30px;
+  padding: 12px 0;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  margin-top: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.qr-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 10px rgba(199,154,63,0.4);
+}
+
+.qr-footer {
+  margin-top: 15px;
+}
+
+.qr-forgot {
+  color: #c79a3f;
+  font-size: 13px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.qr-forgot:hover {
+  text-decoration: underline;
+}
+
+.animate-fade {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
