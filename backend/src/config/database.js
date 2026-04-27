@@ -9,19 +9,19 @@ if (!fs.existsSync(databaseDir)) {
 }
 
 const dbPath = path.join(databaseDir, 'qrinvite.db');
-console.log(' Banco de dados:', dbPath);
+console.log('📁 Banco de dados:', dbPath);
 
 const db = new sqlite3.Database(dbPath, (err) => {
   if (err) {
-    console.error(' Erro ao conectar:', err.message);
+    console.error('❌ Erro ao conectar:', err.message);
   } else {
-    console.log(' Conectado ao SQLite');
+    console.log('✅ Conectado ao SQLite');
     criarTabelas();
   }
 });
 
 function criarTabelas() {
-  // Tabela de convites
+  // Tabela de convites com TODAS as colunas
   const criarTabelaConvites = `
     CREATE TABLE IF NOT EXISTS convites (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -30,15 +30,22 @@ function criarTabelas() {
       nome_convidado2 TEXT,
       qr_code TEXT UNIQUE NOT NULL,
       utilizado INTEGER DEFAULT 0,
-      data_criacao DATETIME DEFAULT CURRENT_TIMESTAMP
+      data_criacao DATETIME DEFAULT CURRENT_TIMESTAMP,
+      endereco TEXT,
+      nome_evento TEXT,
+      data_evento TEXT,
+      hora_evento TEXT,
+      cronograma TEXT,
+      manual TEXT
     )
   `;
 
   db.run(criarTabelaConvites, (err) => {
     if (err) {
-      console.error(' Erro ao criar tabela convites:', err.message);
+      console.error('❌ Erro ao criar tabela convites:', err.message);
     } else {
-      console.log(' Tabela "convites" criada/verificada');
+      console.log('✅ Tabela "convites" criada/verificada');
+      console.log('📋 Colunas: id, uuid, nome_convidado1, nome_convidado2, qr_code, utilizado, data_criacao, endereco, nome_evento, data_evento, hora_evento, cronograma');
     }
   });
 }
