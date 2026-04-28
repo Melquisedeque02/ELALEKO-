@@ -10,7 +10,9 @@ exports.criarConvite = (req, res) => {
     data_evento, 
     hora_evento,
     cronograma,
-    manual
+    manual,
+    declaracao,
+    presentes
   } = req.body;
   
   console.log('📥 Dados recebidos:', req.body);
@@ -28,6 +30,8 @@ exports.criarConvite = (req, res) => {
     hora_evento || null,
     cronograma || null,
     manual || null,
+    declaracao || null,
+    presentes || null,
     (err, resultado) => {
       if (err) {
         console.error('❌ Erro ao criar convite:', err.message);
@@ -96,7 +100,9 @@ exports.validarConvite = (req, res) => {
         data_evento: convite.data_evento,
         hora_evento: convite.hora_evento,
         cronograma: convite.cronograma,
-        manual: convite.manual
+        manual: convite.manual,
+        declaracao: convite.declaracao,
+        presentes: convite.presentes
       }
     });
   });
