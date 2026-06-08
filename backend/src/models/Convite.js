@@ -3,7 +3,7 @@ const { v4: uuidv4 } = require('uuid');
 
 class Convite {
   // Criar novo convite
-  static criar(nome1, nome2 = null, endereco = null, nomeEvento = null, dataEvento = null, horaEvento = null, cronograma = null, manual = null, declaracao = null, presentes = null, callback) {
+  static criar(nome1, nome2 = null, endereco = null, nomeEvento = null, dataEvento = null, horaEvento = null, cronograma = null, manual = null, declaracao = null, presentes = null, paiNoivo = null, maeNoivo = null, paiNoiva = null, maeNoiva = null, eventoId = null, template = 'classico', callback) {
     const uuid = uuidv4();
     const qrCode = uuid;
     
@@ -21,9 +21,15 @@ class Convite {
         cronograma, 
         manual, 
         declaracao, 
-        presentes
+        presentes,
+        pai_noivo,
+        mae_noivo,
+        pai_noiva,
+        mae_noiva,
+        evento_id,
+        template
       )
-      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     `;
     
     db.run(query, [
@@ -39,11 +45,17 @@ class Convite {
       cronograma, 
       manual, 
       declaracao, 
-      presentes
+      presentes,
+      paiNoivo,
+      maeNoivo,
+      paiNoiva,
+      maeNoiva,
+      eventoId,
+      template
     ], function(err) {
       if (callback && typeof callback === 'function') {
         if (err) {
-          console.error('❌ Erro no INSERT:', err.message);
+          console.error('❌ Erro no INSERT convite:', err.message);
           callback(err, null);
         } else {
           callback(null, {
@@ -59,7 +71,13 @@ class Convite {
             cronograma,
             manual,
             declaracao,
-            presentes
+            presentes,
+            pai_noivo: paiNoivo,
+            mae_noivo: maeNoivo,
+            pai_noiva: paiNoiva,
+            mae_noiva: maeNoiva,
+            evento_id: eventoId,
+            template
           });
         }
       }
