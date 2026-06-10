@@ -1,0 +1,149 @@
+/* src/index.css — re-export global styles from styles/index.css */
+/*@import './styles/index.css';*/
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  background: #19634c; /* ← VERDE ESCURO */
+  color: #1a1a1a;
+  line-height: 1.5;
+}
+
+/* Fontes */
+/*@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');*/
+
+/* Cores da marca */
+:root {
+  --primary: #19634c;
+  --primary-dark: #0f4a38;
+  --primary-light: #30bc67;
+  --primary-soft: #b2f26c;
+  --bg: #f5f0eb;
+  --text: #1a1a1a;
+  --text-muted: #6b6b6b;
+  --white: #ffffff;
+  --border: rgba(0, 0, 0, 0.08);
+}
+
+/* Classes utilitárias */
+.bg-primary { background: var(--primary); }
+.bg-primary-light { background: var(--primary-light); }
+.bg-primary-soft { background: var(--primary-soft); }
+.text-primary { color: var(--primary); }
+.text-primary-light { color: var(--primary-light); }
+
+/* Container */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* Botões */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 50px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Inter', sans-serif;
+  text-decoration: none;
+}
+
+.btn-primary {
+  background: #19634c;
+  color: white;
+}
+
+.btn-primary:hover {
+  background: #0f4a38;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(25, 99, 76, 0.3);
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1.5px solid #19634c;
+  color: #19634c;
+}
+
+.btn-outline:hover {
+  background: #19634c;
+  color: white;
+}
+
+.btn-success {
+  background: #30bc67;
+  color: white;
+}
+
+.btn-success:hover {
+  background: #28a745;
+}
+
+/* Cards */
+.card {
+  background: white;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f5f0eb;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #19634c;
+  border-radius: 4px;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+  width: 40px;
+  height: 40px;
+  border: 3px solid #e0dcd7;
+  border-top: 3px solid #19634c;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  gap: 16px;
+}
+
+.loading-container p {
+  color: #19634c;
+  font-weight: 500;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0 16px;
+  }
+}

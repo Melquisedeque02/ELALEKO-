@@ -1,0 +1,254 @@
+/* ═══════════════ CRONOGRAMA ═══════════════ */
+
+/* ── Editor ── */
+.cronograma-editor {
+  background: var(--bg, #f5f0eb);
+  border-radius: 16px;
+  padding: 24px;
+  margin: 24px 0;
+  border: 1px solid rgba(0,0,0,0.06);
+}
+
+.cronograma-header h3 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text, #1e1e1e);
+  margin-bottom: 4px;
+}
+
+.cronograma-header p {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 13px;
+  color: var(--text-muted, #6b6b6b);
+  margin-bottom: 20px;
+}
+
+.eventos-list { margin-bottom: 20px; }
+
+.evento-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: #fff;
+  padding: 12px;
+  border-radius: 12px;
+  margin-bottom: 8px;
+  border: 1px solid rgba(0,0,0,0.06);
+  transition: box-shadow 0.2s;
+}
+
+.evento-item:hover {
+  box-shadow: 0 2px 10px rgba(0,0,0,0.07);
+}
+
+.evento-inputs {
+  flex: 1;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.evento-hora-input  { width: 80px; }
+.evento-titulo-input { flex: 2; min-width: 140px; }
+.evento-desc-input   { flex: 3; min-width: 180px; }
+
+.evento-hora-input,
+.evento-titulo-input,
+.evento-desc-input {
+  padding: 8px 12px;
+  border: 1.5px solid rgba(0,0,0,0.08);
+  border-radius: 8px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s;
+  background: var(--bg, #f5f0eb);
+}
+
+.evento-hora-input:focus,
+.evento-titulo-input:focus,
+.evento-desc-input:focus {
+  border-color: var(--primary, #2d4a2d);
+  box-shadow: 0 0 0 3px rgba(45,74,45,0.07);
+  background: #fff;
+}
+
+.btn-remove-evento {
+  background: #ffebee;
+  color: #c62828;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+  flex-shrink: 0;
+}
+
+.btn-remove-evento:hover {
+  background: #c62828;
+  color: #fff;
+}
+
+.add-evento {
+  background: #fff;
+  border-radius: 12px;
+  padding: 16px;
+  border: 1.5px dashed rgba(45,74,45,0.3);
+}
+
+.add-evento h4 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--primary, #2d4a2d);
+  margin-bottom: 12px;
+}
+
+.add-evento-inputs {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.add-hora  { width: 100px; }
+.add-titulo { flex: 2; min-width: 140px; }
+.add-desc   { flex: 3; min-width: 180px; }
+
+.add-hora, .add-titulo, .add-desc {
+  padding: 10px 12px;
+  border: 1.5px solid rgba(0,0,0,0.08);
+  border-radius: 8px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 13px;
+  outline: none;
+  background: var(--bg, #f5f0eb);
+  transition: border-color 0.2s;
+}
+
+.add-hora:focus, .add-titulo:focus, .add-desc:focus {
+  border-color: var(--primary, #2d4a2d);
+  background: #fff;
+}
+
+.btn-add-evento {
+  background: var(--primary, #2d4a2d);
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  padding: 10px 20px;
+  cursor: pointer;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-add-evento:hover {
+  background: #1e3a1e;
+  transform: translateY(-1px);
+}
+
+.cronograma-tip {
+  background: rgba(201,168,124,0.12);
+  border-radius: 10px;
+  padding: 10px 14px;
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 12px;
+  color: #8b6b4d;
+  border: 1px solid rgba(201,168,124,0.2);
+}
+
+/* ── View ── */
+.cronograma-view { margin: 20px 0; }
+
+.cronograma-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text, #1e1e1e);
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.timeline {
+  position: relative;
+  padding-left: 28px;
+}
+
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 13px; top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--primary, #2d4a2d), rgba(45,74,45,0.15));
+  border-radius: 2px;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 22px;
+  display: flex;
+  gap: 14px;
+}
+
+.timeline-time { min-width: 70px; }
+
+.time-badge {
+  background: var(--primary, #2d4a2d);
+  color: #fff;
+  padding: 4px 10px;
+  border-radius: 999px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 11px;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.timeline-content {
+  position: relative;
+  flex: 1;
+  padding-left: 18px;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -8px; top: 5px;
+  width: 11px; height: 11px;
+  background: var(--primary, #2d4a2d);
+  border: 2px solid #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px var(--primary, #2d4a2d);
+}
+
+.timeline-title {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text, #1e1e1e);
+  margin-bottom: 3px;
+}
+
+.timeline-desc {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 12.5px;
+  color: var(--text-muted, #6b6b6b);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .evento-inputs, .add-evento-inputs { flex-direction: column; }
+  .evento-hora-input, .evento-titulo-input, .evento-desc-input,
+  .add-hora, .add-titulo, .add-desc { width: 100%; }
+  .timeline { padding-left: 20px; }
+  .timeline-item { flex-direction: column; gap: 6px; }
+  .timeline-time { min-width: auto; }
+}

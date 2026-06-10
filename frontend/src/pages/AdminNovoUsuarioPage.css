@@ -1,0 +1,75 @@
+.admin-novo-usuario {
+  min-height: 100vh;
+  background: #f5f0eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+.form-container {
+  max-width: 500px;
+  width: 100%;
+  background: white;
+  border-radius: 28px;
+  padding: 32px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+.form-header { 
+  text-align: center;
+  margin-bottom: 24px;
+}
+.form-header h1 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: #19634c;
+}
+.role-options {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+}
+.role-option {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px;
+  border: 2px solid #e0dcd7;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+.role-option.selected {
+  border-color: #19634c;
+  background: #e8f5e9;
+}
+.role-option input {
+  display: none;
+}
+.role-option small {
+  font-size: 11px;
+  color: #888;
+}
+.form-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+.btn-secondary {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 40px;
+  cursor: pointer;
+  flex: 1;
+}
+.btn-primary {
+  background: #19634c;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 40px;
+  cursor: pointer;
+  flex: 1;
+}

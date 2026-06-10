@@ -1,0 +1,273 @@
+/* Modo Editor */
+.presentes-editor {
+  background: #f5f0eb;
+  border-radius: 20px;
+  padding: 24px;
+  margin: 20px 0;
+}
+
+.presentes-header h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c2c2c;
+  margin-bottom: 4px;
+}
+
+.presentes-header p {
+  font-size: 13px;
+  color: #6b6b6b;
+  margin-bottom: 20px;
+}
+
+.presentes-list {
+  margin-bottom: 20px;
+}
+
+.presente-item {
+  background: white;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 12px;
+  border: 1px solid #e0dcd7;
+}
+
+.presente-inputs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.presente-nome-input {
+  flex: 2;
+  min-width: 150px;
+  padding: 10px 14px;
+  border: 1px solid #e0dcd7;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+.presente-link-input,
+.presente-imagem-input {
+  flex: 2;
+  min-width: 180px;
+  padding: 10px 14px;
+  border: 1px solid #e0dcd7;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+.presente-acoes {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+.btn-comprado {
+  padding: 8px 20px;
+  border: none;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: #e0dcd7;
+  color: #6b6b6b;
+}
+
+.btn-comprado.ativo {
+  background: #2d4a2d;
+  color: white;
+}
+
+.btn-comprado.ativo:hover {
+  background: #1e3a1e;
+}
+
+.btn-remove-presente {
+  background: #c62828;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-size: 12px;
+  transition: all 0.3s ease;
+}
+
+.btn-remove-presente:hover {
+  background: #b71c1c;
+}
+
+.add-presente {
+  background: white;
+  border-radius: 14px;
+  padding: 20px;
+  border: 1px solid #e0dcd7;
+  margin-bottom: 15px;
+}
+
+.add-presente h4 {
+  font-size: 14px;
+  color: #2d4a2d;
+  margin-bottom: 12px;
+}
+
+.add-presente-inputs {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.add-nome {
+  flex: 2;
+  min-width: 150px;
+  padding: 12px;
+  border: 1px solid #e0dcd7;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+.add-link,
+.add-imagem {
+  flex: 2;
+  min-width: 180px;
+  padding: 12px;
+  border: 1px solid #e0dcd7;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+.btn-add-presente {
+  background: #2d4a2d;
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-add-presente:hover {
+  background: #1e3a1e;
+}
+
+.presentes-tip {
+  background: #fff8e1;
+  border-radius: 12px;
+  padding: 12px 16px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: #b8926a;
+}
+
+/* Modo Visualização */
+.presentes-view {
+  margin: 20px 0;
+  display: block;
+}
+
+.presentes-view h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c2c2c;
+  margin-bottom: 16px;
+}
+
+.presentes-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 16px;
+}
+
+.presente-card {
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.presente-card:hover {
+  transform: translateY(-4px);
+}
+
+.presente-card.comprado {
+  opacity: 0.7;
+}
+
+.presente-imagem {
+  height: 150px;
+  background: #f5f0eb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48px;
+}
+
+.presente-imagem img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.imagem-placeholder {
+  font-size: 48px;
+}
+
+.presente-info {
+  padding: 16px;
+}
+
+.presente-info h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: #2c2c2c;
+  margin-bottom: 10px;
+}
+
+.presente-link {
+  display: inline-block;
+  font-size: 12px;
+  color: #2d4a2d;
+  text-decoration: none;
+  margin-bottom: 8px;
+}
+
+.presente-link:hover {
+  text-decoration: underline;
+}
+
+.comprado-badge {
+  display: inline-block;
+  background: #4a7c4a;
+  color: white;
+  font-size: 11px;
+  padding: 4px 10px;
+  border-radius: 30px;
+}
+
+@media (max-width: 768px) {
+  .presentes-editor {
+    padding: 16px;
+  }
+  
+  .presente-inputs,
+  .add-presente-inputs {
+    flex-direction: column;
+  }
+  
+  .presente-acoes {
+    justify-content: center;
+  }
+  
+  .presentes-grid {
+    grid-template-columns: 1fr;
+  }
+}

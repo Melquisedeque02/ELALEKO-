@@ -1,0 +1,676 @@
+/* ==================== TEMPLATE CLÁSSICO V2 ==================== */
+.template-classico-v2 {
+  background: white;
+  border-radius: 20px;
+  padding: 32px;
+  max-width: 500px;
+  margin: 0 auto;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.classico-border {
+  border: 1px solid #c9a87c;
+  border-radius: 16px;
+  padding: 28px 24px;
+  position: relative;
+}
+
+.classico-verse {
+  text-align: center;
+  margin-bottom: 24px;
+  font-style: italic;
+  color: #8b6b4d;
+  font-size: 13px;
+}
+
+.quote-icon {
+  font-size: 24px;
+  color: #c9a87c;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.verse-author {
+  display: block;
+  font-size: 11px;
+  margin-top: 6px;
+}
+
+.classico-title h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  text-align: center;
+  color: #19634c;
+  letter-spacing: 1px;
+  margin-bottom: 20px;
+}
+
+.classico-guests {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.guest-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: #2c2c2c;
+  border-top: 1px solid #e0dcd7;
+  border-bottom: 1px solid #e0dcd7;
+  padding: 12px 0;
+  display: inline-block;
+}
+
+.classico-info {
+  background: #f8f9fa;
+  padding: 16px;
+  border-radius: 12px;
+  margin-bottom: 16px;
+}
+
+.info-line {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 0;
+  font-size: 13px;
+  color: #555;
+}
+
+.classico-children {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  margin: 16px 0;
+  font-size: 13px;
+  color: #555;
+}
+
+.classico-contact {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  font-size: 12px;
+  color: #888;
+  margin: 12px 0;
+}
+
+.classico-qr {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.classico-qr img {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+}
+
+.classico-qr p {
+  font-size: 10px;
+  color: #aaa;
+  margin-top: 8px;
+}
+
+.classico-message {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  text-align: center;
+  font-size: 12px;
+  color: #19634c;
+  font-style: italic;
+  margin: 16px 0;
+}
+
+.classico-footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 9px;
+  color: #bbb;
+}
+
+/* ==================== TEMPLATE MODERNO V2 ==================== */
+.template-moderno-v2 {
+  background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+  border-radius: 24px;
+  padding: 32px;
+  max-width: 500px;
+  margin: 0 auto;
+  color: white;
+}
+
+.moderno-header-badge {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.moderno-header-badge span {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 4px 16px;
+  border-radius: 50px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 2px;
+}
+
+.moderno-title {
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.moderno-guest {
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  opacity: 0.9;
+  margin-bottom: 24px;
+}
+
+.moderno-info-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.moderno-info-card {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 10px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12px;
+}
+
+.moderno-info-card.full-width {
+  grid-column: span 2;
+}
+
+.moderno-children {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  margin: 16px 0;
+  font-size: 13px;
+}
+
+.moderno-message {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  margin: 16px 0;
+  font-size: 12px;
+  font-style: italic;
+  text-align: center;
+}
+
+.moderno-contact {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  font-size: 11px;
+  margin: 12px 0;
+  opacity: 0.7;
+}
+
+.moderno-qr {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.moderno-qr img {
+  width: 90px;
+  height: 90px;
+  border-radius: 12px;
+  background: white;
+  padding: 4px;
+}
+
+.moderno-qr p {
+  font-size: 10px;
+  opacity: 0.6;
+  margin-top: 8px;
+}
+
+/* ==================== TEMPLATE ROMÂNTICO V2 ==================== */
+.template-romantico-v2 {
+  background: linear-gradient(135deg, #fff5f5 0%, #ffe0e0 100%);
+  border-radius: 24px;
+  padding: 32px;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.romantico-floral {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 16px;
+  color: #e91e63;
+}
+
+.romantico-verse {
+  font-style: italic;
+  color: #b56576;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.romantico-title {
+  font-size: 22px;
+  color: #e91e63;
+  margin-bottom: 16px;
+}
+
+.romantico-guest {
+  font-size: 16px;
+  font-weight: 500;
+  color: #4a4a4a;
+  margin-bottom: 20px;
+}
+
+.romantico-details {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 16px;
+  border-radius: 16px;
+  margin-bottom: 16px;
+}
+
+.romantico-detail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 8px 0;
+  font-size: 13px;
+}
+
+.romantico-children {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 16px 0;
+  font-size: 13px;
+  color: #4a4a4a;
+}
+
+.romantico-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 11px;
+  margin: 12px 0;
+  color: #888;
+}
+
+.romantico-qr img {
+  width: 90px;
+  height: 90px;
+  margin: 16px auto;
+}
+
+.romantico-footer-message {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 12px;
+  color: #e91e63;
+  margin-top: 16px;
+}
+
+/* ==================== TEMPLATE NATUREZA V2 ==================== */
+.template-natureza-v2 {
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6d9 100%);
+  border-radius: 24px;
+  padding: 32px;
+  max-width: 500px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.natureza-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  color: #2e7d32;
+  margin-bottom: 16px;
+  font-size: 12px;
+  letter-spacing: 2px;
+}
+
+.template-natureza-v2 h1 {
+  font-size: 24px;
+  color: #2e7d32;
+  margin-bottom: 16px;
+}
+
+.natureza-guest {
+  font-size: 16px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.natureza-info {
+  background: rgba(255, 255, 255, 0.7);
+  padding: 16px;
+  border-radius: 16px;
+  margin-bottom: 16px;
+}
+
+.natureza-info div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 8px 0;
+  font-size: 13px;
+}
+
+.natureza-children {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 16px 0;
+}
+
+.natureza-message {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: center;
+  margin: 16px 0;
+  font-size: 12px;
+  font-style: italic;
+}
+
+.natureza-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 11px;
+  margin: 12px 0;
+}
+
+.natureza-qr img {
+  width: 90px;
+  height: 90px;
+  margin: 16px auto;
+}
+
+.natureza-qr p {
+  font-size: 10px;
+  margin-top: 8px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .template-classico-v2,
+  .template-moderno-v2,
+  .template-romantico-v2,
+  .template-natureza-v2 {
+    padding: 20px;
+  }
+  
+  .classico-border {
+    padding: 20px 16px;
+  }
+  
+  .guest-name {
+    font-size: 16px;
+  }
+}
+
+
+/* ==================== TEMPLATE RELIGIOSO ==================== */
+.template-religioso {
+  max-width: 500px;
+  margin: 0 auto;
+  background: #fffef7;
+  border-radius: 24px;
+  padding: 32px 24px;
+  font-family: 'Cormorant Garamond', serif;
+  color: #2c2c2c;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.05);
+  text-align: center;
+}
+
+.floral-top, .floral-bottom {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  color: #c9a87c;
+  margin: 8px 0 16px;
+}
+
+.versiculo {
+  font-style: italic;
+  font-size: 13px;
+  color: #8b6b4d;
+  margin: 16px 0;
+  border-top: 1px solid #e8d5c0;
+  border-bottom: 1px solid #e8d5c0;
+  padding: 12px 0;
+}
+
+.versiculo .citacao {
+  display: block;
+  font-size: 11px;
+  margin-top: 6px;
+}
+
+.familia-titulo {
+  font-size: 11px;
+  letter-spacing: 2px;
+  color: #8b6b4d;
+  margin: 16px 0 8px;
+}
+
+.familia-titulo span {
+  display: block;
+}
+
+.familia-nomes {
+  margin: 16px 0;
+}
+
+.nomes-pais {
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin: 8px 0;
+}
+
+.nomes-pais-secundarios {
+  font-size: 13px;
+  color: #6b6b6b;
+  margin: 8px 0;
+}
+
+.convite-texto p {
+  font-size: 13px;
+  letter-spacing: 1px;
+  margin: 8px 0;
+}
+
+.convite-texto h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #19634c;
+  margin: 12px 0;
+}
+
+.data-destaque {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #f8f5f0;
+  padding: 12px;
+  border-radius: 40px;
+  margin: 20px 0;
+  font-size: 15px;
+  font-weight: 600;
+  color: #19634c;
+}
+
+.evento-detalhe {
+  margin: 24px 0;
+  padding: 12px;
+  border-left: 2px solid #e8d5c0;
+  text-align: left;
+}
+
+.evento-icon {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.evento-icon h3 {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: #8b6b4d;
+  margin: 0;
+}
+
+.evento-local {
+  font-size: 14px;
+  font-weight: 500;
+  margin: 4px 0 4px 26px;
+}
+
+.evento-endereco {
+  font-size: 12px;
+  color: #6b6b6b;
+  margin: 2px 0 2px 26px;
+}
+
+.evento-hora {
+  font-size: 12px;
+  color: #6b6b6b;
+  margin: 2px 0 2px 26px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.aviso-criancas {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 12px;
+  font-style: italic;
+  color: #a0705a;
+  margin: 20px 0;
+}
+
+.contacto {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 12px;
+  background: #f8f5f0;
+  padding: 10px;
+  border-radius: 30px;
+  margin: 16px 0;
+}
+
+.qr-code {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.qr-code img {
+  width: 100px;
+  height: 100px;
+  border-radius: 12px;
+  border: 1px solid #e8d5c0;
+  padding: 6px;
+  background: white;
+}
+
+.qr-code p {
+  font-size: 10px;
+  color: #aaa;
+  margin-top: 8px;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .template-religioso {
+    padding: 24px 16px;
+  }
+  
+  .evento-detalhe {
+    margin: 16px 0;
+  }
+  
+  .evento-icon h3 {
+    font-size: 12px;
+  }
+  
+  .evento-local,
+  .evento-endereco,
+  .evento-hora {
+    margin-left: 20px;
+  }
+}
+
+
+
+.convidado-nomes {
+  font-size: 18px;
+  font-weight: 600;
+  text-align: center;
+  margin: 16px 0;
+  padding: 8px 0;
+  border-top: 1px solid #e8d5c0;
+  border-bottom: 1px solid #e8d5c0;
+  display: inline-block;
+  width: 100%;
+}
+
+.declaracao-mensagem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 16px 0;
+  font-size: 12px;
+  color: #8b6b4d;
+  font-style: italic;
+  text-align: center;
+}
+
+
+.template-religioso,
+.template-classico-v2,
+.template-moderno-v2,
+.template-romantico-v2,
+.template-natureza-v2 {
+  page-break-inside: avoid;
+  break-inside: avoid;
+  overflow: visible;
+}

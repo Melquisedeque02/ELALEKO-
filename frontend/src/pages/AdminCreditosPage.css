@@ -1,0 +1,453 @@
+.admin-creditos-page { padding: 40px 20px; max-width: 1400px; margin: 0 auto; }
+.admin-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 30px; }
+.tabs { display: flex; gap: 8px; margin-bottom: 30px; flex-wrap: wrap; }
+.tabs button { padding: 10px 24px; background: #f8f9fa; border: none; border-radius: 40px; cursor: pointer; }
+.tabs button.active { background: #19634c; color: white; }
+table { width: 100%; border-collapse: collapse; background: white; border-radius: 16px; overflow: hidden; }
+th, td { padding: 12px 16px; text-align: left; border-bottom: 1px solid #e0dcd7; }
+th { background: #f8f9fa; color: #19634c; }
+.edit-input { width: 80px; padding: 6px; border: 1px solid #e0dcd7; border-radius: 8px; }
+.actions { display: flex; gap: 8px; }
+.btn-edit, .btn-save, .btn-cancel { background: none; border: none; cursor: pointer; padding: 4px 8px; border-radius: 8px; }
+.btn-edit { color: #19634c; }
+.btn-save { color: #28a745; }
+.btn-cancel { color: #dc3545; }
+.filtros { display: flex; gap: 16px; margin-bottom: 20px; }
+.filtros select { padding: 8px 16px; border: 1px solid #e0dcd7; border-radius: 30px; background: white; }
+.tipo-badge { padding: 4px 10px; border-radius: 20px; font-size: 12px; }
+.tipo-simulacao_compra { background: #d4edda; color: #155724; }
+.tipo-uso_ia { background: #cfe2ff; color: #084298; }
+.tipo-ajuste_manual { background: #fff3cd; color: #856404; }
+.templates-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(350px, 1fr)); gap: 20px; }
+.template-card { background: white; border-radius: 20px; overflow: hidden; box-shadow: 0 2px 8px rgba(0,0,0,0.05); }
+.template-header { padding: 12px 16px; background: #f8f9fa; display: flex; justify-content: space-between; }
+.template-preview { padding: 16px; }
+.template-footer { padding: 12px 16px; border-top: 1px solid #eee; font-size: 12px; }
+.config-item { background: white; padding: 20px; border-radius: 16px; margin-bottom: 20px; }
+.toggle-switch { display: flex; gap: 12px; margin-top: 10px; }
+.toggle-switch button { padding: 8px 24px; border: 1px solid #e0dcd7; background: white; cursor: pointer; border-radius: 30px; }
+.toggle-switch button.active { background: #19634c; color: white; border-color: #19634c; }
+.error-cell { color: #dc3545; max-width: 300px; word-break: break-word; }
+
+
+/* Estilo para o botão Limites */
+.btn-limites {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #c9a87c;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-limites:hover {
+  background: #b8926a;
+  transform: translateY(-1px);
+}
+
+/* Ajuste para os botões de ação na mesma linha */
+.actions {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.btn-edit {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #19634c;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-edit:hover {
+  background: #0f4a38;
+  transform: translateY(-1px);
+}
+
+.btn-save {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #28a745;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 30px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.btn-cancel {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: #dc3545;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 30px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+/* Modal de edição de limites */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 20px;
+  padding: 28px;
+  width: 90%;
+  max-width: 450px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.modal-content h2 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 22px;
+  color: #19634c;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.modal-content .form-group {
+  margin-bottom: 20px;
+}
+
+.modal-content .form-group label {
+  display: block;
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 6px;
+}
+
+.modal-content .form-group input {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid #e0dcd7;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+.modal-content .form-group input:focus {
+  outline: none;
+  border-color: #19634c;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: flex-end;
+  margin-top: 24px;
+}
+
+.modal-actions .btn-cancel {
+  background: #6c757d;
+  padding: 10px 20px;
+}
+
+.modal-actions .btn-save {
+  background: #19634c;
+  padding: 10px 24px;
+}
+
+.modal-actions button {
+  font-size: 14px;
+  padding: 10px 20px;
+}
+
+
+
+
+
+.btn-edit-precos {
+  margin-top: 12px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #c9a87c;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 30px;
+  cursor: pointer;
+}
+
+.pacote-edit-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.pacote-input-creditos {
+  width: 70px;
+  padding: 6px 8px;
+  border: 1px solid #e0dcd7;
+  border-radius: 8px;
+}
+
+.pacote-input-preco {
+  width: 80px;
+  padding: 6px 8px;
+  border: 1px solid #e0dcd7;
+  border-radius: 8px;
+}
+
+.btn-remove-pacote {
+  background: #dc3545;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.btn-add-pacote {
+  margin: 12px 0;
+  background: #19634c;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 30px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+.config-hint {
+  display: block;
+  margin-top: 8px;
+  font-size: 12px;
+  color: #6b6b6b;
+}
+
+.edit-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+
+
+
+/* ===== RESPONSIVIDADE PARA TABELA (Telemóvel) ===== */
+@media (max-width: 768px) {
+  .admin-creditos-page {
+    padding: 20px 12px;
+  }
+
+  .admin-header {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+
+  .admin-header h1 {
+    font-size: 24px;
+  }
+
+  /* Tabs responsivas */
+  .tabs {
+    justify-content: center;
+  }
+
+  .tabs button {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+
+  /* TABELA HORIZONTAL COM SCROLL */
+  .organizadores-table {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  table {
+    min-width: 600px;
+    font-size: 12px;
+  }
+
+  th, td {
+    padding: 10px 12px;
+    white-space: nowrap;
+  }
+
+  /* Ações em coluna */
+  .actions {
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .btn-edit, .btn-limites, .btn-save, .btn-cancel {
+    padding: 6px 10px;
+    font-size: 11px;
+    white-space: nowrap;
+  }
+
+  /* Filtros */
+  .filtros {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .filtros select {
+    width: 100%;
+    padding: 10px 16px;
+  }
+
+  /* Templates Grid */
+  .templates-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .template-card {
+    max-width: 100%;
+  }
+
+  .template-header {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  /* Configurações */
+  .config-item {
+    padding: 16px;
+  }
+
+  .toggle-switch {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .toggle-switch button {
+    width: 100%;
+    padding: 10px;
+  }
+
+  /* Pacotes de edição */
+  .pacote-edit-item {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .pacote-input-creditos,
+  .pacote-input-preco {
+    width: 100%;
+  }
+
+  .btn-remove-pacote {
+    align-self: center;
+  }
+
+  /* Modal */
+  .modal-content {
+    width: 95%;
+    padding: 20px;
+    margin: 16px;
+  }
+
+  .modal-content h2 {
+    font-size: 18px;
+  }
+
+  .modal-actions {
+    flex-direction: column;
+  }
+
+  .modal-actions button {
+    width: 100%;
+  }
+}
+
+/* Para telas muito pequenas (até 480px) */
+@media (max-width: 480px) {
+  .admin-header h1 {
+    font-size: 20px;
+  }
+
+  .tabs button {
+    padding: 6px 12px;
+    font-size: 11px;
+  }
+
+  table {
+    min-width: 550px;
+    font-size: 11px;
+  }
+
+  th, td {
+    padding: 8px 10px;
+  }
+
+  .btn-edit, .btn-limites, .btn-save, .btn-cancel {
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+
+  .template-preview {
+    padding: 12px;
+    font-size: 12px;
+  }
+
+  .config-item {
+    padding: 14px;
+  }
+
+  .pacote-item, .pacote-edit-item {
+    font-size: 13px;
+  }
+}
+
+/* Para tablets (768px - 1024px) */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .templates-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .admin-creditos-page {
+    padding: 30px 16px;
+  }
+
+  table {
+    font-size: 13px;
+  }
+
+  th, td {
+    padding: 10px 14px;
+  }
+}

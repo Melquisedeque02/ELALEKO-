@@ -1,0 +1,515 @@
+.criar-page {
+  min-height: calc(100vh - 70px);
+  background: #f5f0eb;
+  padding: 40px 20px;
+}
+
+.criar-container {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 32px;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.page-header h1 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  color: #19634c;
+  margin-bottom: 8px;
+}
+
+.page-header p {
+  font-size: 16px;
+  color: #6b6b6b;
+}
+
+.form-card {
+  background: white;
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.form-title {
+  font-size: 20px;
+  font-weight: 600;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  color: var(--primary, #2d4a2d);
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+.form-subtitle {
+  font-size: 14px;
+  color: #6b6b6b;
+  text-align: center;
+  margin-bottom: 28px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px 16px;
+  border: 1.5px solid #e0dcd7;
+  border-radius: 12px;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #19634c;
+  box-shadow: 0 0 0 3px rgba(25, 99, 76, 0.1);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 28px;
+}
+
+.btn {
+  flex: 1;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.btn-primary {
+  background: #19634c;
+  color: white;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: #0f4a38;
+  transform: translateY(-2px);
+}
+
+.btn-secondary {
+  background: #f0f0f0;
+  color: #333;
+}
+
+.btn-secondary:hover {
+  background: #e0e0e0;
+}
+
+.btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.alert {
+  padding: 12px 16px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.alert-error {
+  background: #ffebee;
+  color: #c62828;
+  border-left: 4px solid #c62828;
+}
+
+/* QR Code Section */
+.qr-section {
+  margin-top: 32px;
+}
+
+.qr-card {
+  background: white;
+  border-radius: 24px;
+  padding: 24px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+}
+
+.qr-header {
+  margin-bottom: 20px;
+}
+
+.qr-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #28a745;
+  margin-bottom: 4px;
+}
+
+.qr-subtitle {
+  font-size: 13px;
+  color: #6b6b6b;
+}
+
+.qr-info-text {
+  font-size: 12px;
+  color: #30bc67;
+  margin-top: 8px;
+}
+
+.qr-code-container {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 16px;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.qr-info {
+  background: #f8f9fa;
+  border-radius: 12px;
+  padding: 16px;
+  margin-bottom: 20px;
+  text-align: left;
+}
+
+.info-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 0;
+  border-bottom: 1px solid #e0dcd7;
+  font-size: 13px;
+}
+
+.info-row:last-child {
+  border-bottom: none;
+}
+
+.info-label {
+  font-weight: 600;
+  color: #6b6b6b;
+}
+
+.info-value {
+  color: #333;
+  word-break: break-all;
+  text-align: right;
+  max-width: 60%;
+}
+
+.qr-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1.5px solid #19634c;
+  color: #19634c;
+}
+
+.btn-outline:hover {
+  background: #19634c;
+  color: white;
+}
+
+.spinner-small {
+  width: 16px;
+  height: 16px;
+  border: 2px solid white;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+  display: inline-block;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .criar-page {
+    padding: 20px 16px;
+  }
+  
+  .form-card {
+    padding: 24px;
+  }
+  
+  .form-row {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+  }
+  
+  .qr-actions {
+    flex-direction: column;
+  }
+  
+  .info-row {
+    flex-direction: column;
+    gap: 4px;
+  }
+  
+  .info-value {
+    text-align: left;
+    max-width: 100%;
+  }
+}
+
+/* Preview do Template */
+.template-preview-section {
+  margin: 24px 0;
+  background: white;
+  border-radius: 20px;
+  padding: 20px;
+  border: 1px solid #e0dcd7;
+}
+
+.preview-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #19634c;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.template-preview-container {
+  background: #f5f0eb;
+  border-radius: 16px;
+  padding: 20px;
+  overflow-x: auto;
+}
+
+.preview-note {
+  font-size: 11px;
+  color: #888;
+  text-align: center;
+  margin-top: 12px;
+}
+
+/* Seletor de Templates */
+.template-selector {
+  margin: 24px 0;
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  border: 1px solid #e0dcd7;
+}
+
+.template-label {
+  display: block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #19634c;
+  margin-bottom: 16px;
+}
+
+.template-options {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.template-option {
+  flex: 1;
+  min-width: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  padding: 16px 12px;
+  background: #f8f9fa;
+  border: 2px solid #e0dcd7;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.template-option.active {
+  border-color: #19634c;
+  background: #e8f5e9;
+  box-shadow: 0 2px 8px rgba(25, 99, 76, 0.15);
+}
+
+.template-option:hover {
+  transform: translateY(-2px);
+  border-color: #19634c;
+}
+
+.template-icon {
+  font-size: 28px;
+}
+
+.template-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+}
+
+.template-desc {
+  font-size: 11px;
+  color: #888;
+}
+
+/* Preview do Template */
+.template-preview-section {
+  margin: 24px 0;
+  background: #f5f0eb;
+  border-radius: 20px;
+  padding: 20px;
+}
+
+.preview-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #19634c;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+.template-preview-container {
+  background: #f5f0eb;
+  border-radius: 16px;
+  overflow-x: auto;
+}
+
+.preview-note {
+  font-size: 11px;
+  color: #888;
+  text-align: center;
+  margin-top: 12px;
+}
+
+
+/* Seletor de tipo de evento */
+.tipo-selector {
+  background: white;
+  border-radius: 24px;
+  padding: 48px 32px;
+  text-align: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+}
+
+.tipo-selector h2 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 28px;
+  color: #19634c;
+  margin-bottom: 32px;
+}
+
+.tipo-opcoes {
+  display: flex;
+  gap: 24px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.btn-tipo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 32px 48px;
+  border: 2px solid #e0dcd7;
+  border-radius: 20px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 18px;
+  font-weight: 600;
+  color: #333;
+}
+
+.btn-tipo span {
+  font-size: 48px;
+}
+
+.btn-tipo.casamento:hover {
+  border-color: #19634c;
+  background: #e8f5e9;
+  transform: translateY(-4px);
+}
+
+.btn-tipo.outro:hover {
+  border-color: #c9a87c;
+  background: #faf5ed;
+  transform: translateY(-4px);
+}
+
+.btn-voltar-tipo {
+  background: none;
+  border: none;
+  color: #19634c;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 12px;
+  text-decoration: underline;
+}
+
+.btn-voltar-tipo:hover {
+  color: #0f4a38;
+}
+
+@media (max-width: 768px) {
+  .btn-tipo {
+    padding: 24px 32px;
+  }
+  .btn-tipo span {
+    font-size: 36px;
+  }
+}
+
+
+
+
+.tipo-selector {
+  text-align: center;
+  padding: 40px;
+}
+.tipo-opcoes {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin-top: 30px;
+}
+.btn-tipo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 24px 32px;
+  background: white;
+  border: 2px solid #e0dcd7;
+  border-radius: 24px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-weight: 600;
+  color: #19634c;
+}
+.btn-tipo:hover {
+  border-color: #19634c;
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}

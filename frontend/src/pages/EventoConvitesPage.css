@@ -1,0 +1,480 @@
+.evento-convites-page {
+  min-height: 100vh;
+  background: #f5f0eb;
+  padding: 40px 20px;
+}
+
+.page-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Cabeçalho */
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.page-header h1 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 28px;
+  color: #19634c;
+  margin: 0;
+}
+
+.btn-back {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  background: none;
+  border: none;
+  color: #6b6b6b;
+  cursor: pointer;
+  padding: 8px 12px;
+  border-radius: 30px;
+}
+
+.btn-primary {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #19634c;
+  color: white;
+  text-decoration: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 14px;
+}
+
+/* Barra de Pesquisa */
+.search-bar {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 40px;
+  padding: 12px 20px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.search-icon {
+  color: #6b6b6b;
+  margin-right: 12px;
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  font-size: 14px;
+  background: transparent;
+}
+
+/* Lista de Convites */
+.convites-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.convite-item {
+  background: white;
+  border-radius: 16px;
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  transition: all 0.2s;
+}
+
+.convite-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.convite-info {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.convite-nome {
+  font-size: 16px;
+  color: #2c2c2c;
+}
+
+.status-badge {
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-badge.valid {
+  background: #d4edda;
+  color: #155724;
+}
+
+.status-badge.used {
+  background: #f8d7da;
+  color: #721c24;
+}
+
+.btn-ver-detalhes {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #19634c;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-ver-detalhes:hover {
+  background: #0f4a38;
+}
+
+/* Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal-content {
+  background: white;
+  border-radius: 24px;
+  width: 90%;
+  max-width: 500px;
+  max-height: 85vh;
+  overflow-y: auto;
+  padding: 24px;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #e0dcd7;
+}
+
+.modal-header h2 {
+  font-size: 20px;
+  color: #19634c;
+  margin: 0;
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #6b6b6b;
+}
+
+.modal-body {
+  margin-bottom: 20px;
+}
+
+.detail-row {
+  padding: 8px 0;
+  border-bottom: 1px solid #f0f0f0;
+  font-size: 14px;
+}
+
+.modal-actions-buttons {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding-top: 16px;
+  border-top: 1px solid #e0dcd7;
+}
+
+.modal-actions-buttons button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 30px;
+  font-size: 13px;
+  cursor: pointer;
+}
+/*
+.btn-editar { background: #ffc107; color: #333; }
+.btn-utilizar { background: #28a745; color: white; }
+.btn-pdf { background: #17a2b8; color: white; }
+.btn-deletar { background: #dc3545; color: white; }
+.btn-cancel { background: #6c757d; color: white; }
+.btn-save { background: #19634c; color: white; }
+*/
+.btn-detalhes { background: #19634c; color: white; }
+.btn-editar { background: #157e5c; color: #fff; }
+.btn-utilizar { background: #28a745; color: white; }
+.btn-pdf { background: #19634c; color: white; }
+.btn-delete { background: #dc3545; color: white; }
+
+.btn-detalhes:hover { background: #0f4a38; }
+.btn-editar:hover { background: #0c3d2e; }
+.btn-utilizar:hover { background: #1e7e34; }
+.btn-pdf:hover { background: #0f4a38; }
+.btn-delete:hover { background: #c82333; }
+
+/* Empty State */
+.empty-state {
+  text-align: center;
+  background: white;
+  border-radius: 24px;
+  padding: 60px 40px;
+}
+
+.empty-icon { font-size: 64px; margin-bottom: 16px; }
+.empty-state h3 { font-size: 20px; color: #2c2c2c; margin-bottom: 8px; }
+.empty-state p { color: #6b6b6b; margin-bottom: 24px; }
+.btn-outline { display: inline-flex; align-items: center; gap: 8px; background: none; border: 2px solid #19634c; color: #19634c; padding: 10px 24px; border-radius: 30px; text-decoration: none; }
+
+/* Responsivo */
+@media (max-width: 768px) {
+  .convite-item {
+    flex-direction: column;
+    text-align: center;
+  }
+  .btn-ver-detalhes {
+    width: 100%;
+    justify-content: center;
+  }
+  .modal-actions-buttons {
+    flex-direction: column;
+  }
+  .modal-actions-buttons button {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+
+
+
+.bulk-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  background: #f0ebe6;
+  border-radius: 16px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn-download-all {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #19634c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 40px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.btn-download-all:hover {
+  background: #0f4a38;
+  transform: translateY(-2px);
+}
+
+.bulk-info {
+  font-size: 13px;
+  color: #6b6b6b;
+}
+.search-bulk-bar {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.search-bar {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 40px;
+  padding: 12px 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.btn-download-all {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #19634c;
+  color: white;
+  border: none;
+  padding: 10px 24px;
+  border-radius: 40px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.btn-download-all:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+
+
+
+
+.header-buttons {
+  display: flex;
+  gap: 12px;
+}
+
+.btn-importar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: #c9a87c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 30px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn-importar:hover {
+  background: #b8926a;
+  transform: translateY(-1px);
+}
+
+.empty-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Modal de Importação */
+.import-modal {
+  max-width: 500px;
+}
+
+.import-note {
+  font-size: 12px;
+  color: #6b6b6b;
+  margin: 8px 0 16px;
+}
+
+.btn-modelo {
+  background: #6c757d;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 13px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.upload-area {
+  border: 2px dashed #c9a87c;
+  border-radius: 16px;
+  padding: 30px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.2s;
+  background: #f8f9fa;
+}
+
+.upload-area:hover {
+  background: #f0ebe6;
+  border-color: #19634c;
+}
+
+.importing-status {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 20px;
+  padding: 12px;
+  background: #e8f5e9;
+  border-radius: 12px;
+}
+
+.loading-spinner-small {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #e0dcd7;
+  border-top: 2px solid #19634c;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+.import-result {
+  margin-top: 20px;
+  padding: 15px;
+  border-radius: 12px;
+}
+
+.import-result.success {
+  background: #d4edda;
+  color: #155724;
+}
+
+.import-result.partial {
+  background: #fff3cd;
+  color: #856404;
+}
+
+.import-result details {
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+.import-result ul {
+  margin: 8px 0 0 20px;
+}
+
+.modal-footer {
+  padding: 16px 24px;
+  border-top: 1px solid #e0dcd7;
+  display: flex;
+  justify-content: flex-end;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
