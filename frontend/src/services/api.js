@@ -26,29 +26,98 @@ class ApiService {
     return token ? { 'Authorization': `Bearer ${token}` } : {};
   }
 
-  static async login(email, senha) {
+static async login(email, senha) {
   try {
     console.log('🔐 Tentando login em:', `${API_BASE_URL}/auth/login`);
+    
+    // Timeout de 10 segundos para a requisição
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 10000);
     
     const response = await fetch(`${API_BASE_URL}/auth/login`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ email, senha })
+      body: JSON.stringify({ email, senha }),
+      signal: controller.signal
     });
     
-    const data = await response.json();
+    clearTimeout(timeoutId);
+    
+    // Tentar fazer parse do JSON, mas pode falhar se a resposta não for JSON
+    let data;
+    try {
+      data = await response.json();
+    } catch (e) {
+      // Se não for JSON, é um erro do servidor
+      console.error('Resposta não é JSON:', e);
+      throw new Error('Erro no servidor. Tente novamente mais tarde.');
+    }
     
     if (!response.ok) {
-      // Mostrar mensagem de erro correta
-      const errorMsg = data.error || data.message || 'Erro ao fazer login';
+      // Mapear códigos de status HTTP para mensagens amigáveis
+      let errorMsg = '';
+      
+      switch (response.status) {
+        case 400:
+          errorMsg = data.error || 'Dados inválidos. Verifique seu email e senha.';
+          break;
+        case 401:
+          errorMsg = data.error || 'Email ou senha incorretos.';
+          break;
+        case 403:
+          errorMsg = 'Acesso negado. Verifique suas permissões.';
+          break;
+        case 404:
+          errorMsg = 'Serviço indisponível. Tente novamente mais tarde.';
+          break;
+        case 500:
+          errorMsg = 'Erro interno do servidor. Nossa equipe foi notificada.';
+          break;
+        default:
+          errorMsg = data.error || data.message || 'Erro ao fazer login. Tente novamente.';
+      }
+      
       throw new Error(errorMsg);
     }
     
     return data;
     
   } catch (error) {
-    console.error('❌ Erro ao fazer login:', error);
+    console.error('❌ Erro detalhado ao fazer login:', error);
+    
+    // Tratamento de erros de rede/conexão
+    if (error.name === 'AbortError') {
+      throw new Error('O servidor demorou muito para responder. Verifique sua conexão e tente novamente.');
+    }
+    
+    if (error.message === 'Failed to fetch') {
+      throw new Error('Não foi possível conectar ao servidor. Verifique se o backend está rodando em http://localhost:5000');
+    }
+    
+    if (error.message.includes('NetworkError') || error.message.includes('network')) {
+      throw new Error('Erro de rede. Verifique sua conexão com a internet.');
+    }
+    
+    // Re-lançar o erro com a mensagem já tratada
     throw error;
+  }
+}
+
+static async checkHealth() {
+  try {
+    const controller = new AbortController();
+    const timeoutId = setTimeout(() => controller.abort(), 5000);
+    
+    const response = await fetch(`${API_BASE_URL}/health`, {
+      method: 'GET',
+      signal: controller.signal
+    });
+    
+    clearTimeout(timeoutId);
+    return response.ok;
+  } catch (error) {
+    console.error('Health check failed:', error);
+    return false;
   }
 }
 

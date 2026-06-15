@@ -31,6 +31,19 @@ const LoginPage = () => {
     setLoading(true);
     setErro('');
 
+    // Validação básica no frontend
+    if (!email.trim()) {
+      setErro('Por favor, insira seu email');
+      setLoading(false);
+      return;
+    }
+
+    if (!senha.trim()) {
+      setErro('Por favor, insira sua senha');
+      setLoading(false);
+      return;
+    }
+
     try {
       const data = await ApiService.login(email, senha);
       
@@ -48,7 +61,28 @@ const LoginPage = () => {
       }
       
     } catch (error) {
-      setErro(error.message || 'Erro ao fazer login');
+      // Tratamento suave de erros - mensagens amigáveis
+      let mensagemAmigavel = '';
+      
+      switch (error.message) {
+        case 'Failed to fetch':
+          mensagemAmigavel = 'Não foi possível conectar ao servidor. Verifique sua conexão com a internet e tente novamente.';
+          break;
+        case 'Email ou senha inválidos':
+          mensagemAmigavel = 'Email ou senha incorretos. Por favor, verifique seus dados e tente novamente.';
+          break;
+        case 'Conta desativada. Contacte o administrador.':
+          mensagemAmigavel = 'Sua conta está desativada. Entre em contato com o administrador do sistema.';
+          break;
+        case 'Network Error':
+          mensagemAmigavel = 'Erro de rede. Verifique sua conexão com a internet.';
+          break;
+        default:
+          mensagemAmigavel = 'Ocorreu um erro ao tentar fazer login. Tente novamente em alguns instantes.';
+      }
+      
+      setErro(mensagemAmigavel);
+      console.error('Erro de login:', error); // Log apenas para desenvolvimento
     } finally {
       setLoading(false);
     }
@@ -63,11 +97,20 @@ const LoginPage = () => {
               src="/images/logo-elaleko2.png" 
               alt="Elaleko" 
               className="login-logo"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = '/images/logo-default.png';
+              }}
             />
             <h1>Login</h1>
           </div>
 
-          {erro && <div className="alert alert-error">{erro}</div>}
+          {erro && (
+            <div className="alert alert-error">
+              <span className="alert-icon">⚠️</span>
+              {erro}
+            </div>
+          )}
 
           <form onSubmit={handleSubmit}>
             <div className="form-group">
@@ -78,6 +121,8 @@ const LoginPage = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 placeholder="seu@email.com"
                 required
+                disabled={loading}
+                autoComplete="email"
               />
             </div>
 
@@ -89,20 +134,23 @@ const LoginPage = () => {
                 onChange={(e) => setSenha(e.target.value)}
                 placeholder="••••••"
                 required
+                disabled={loading}
+                autoComplete="current-password"
               />
             </div>
 
-            <button type="submit" className="btn btn-primary" disabled={loading}>
-              {loading ? 'Entrando...' : 'Entrar'}
+            <button 
+              type="submit" 
+              className="btn btn-primary" 
+              disabled={loading}
+            >
+              {loading ? 'A entrar...' : 'Entrar'}
             </button>
           </form>
-
 
           <div className="forgot-password-link">
             <Link to="/forgot-password">Esqueceu a senha?</Link>
           </div>
-
-          
         </div>
       </div>
     </div>

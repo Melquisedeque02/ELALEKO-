@@ -19,16 +19,24 @@ exports.login = (req, res) => {
   Usuario.buscarPorEmail(email, (err, usuario) => {
     if (err) {
       console.error('Erro ao buscar usuário:', err);
-      return res.status(500).json({ error: 'Erro ao buscar usuário' });
+      return res.status(500).json({ error: 'Erro interno do servidor' });
     }
     
+    // CORREÇÃO PRINCIPAL: Verificar se usuário existe primeiro
+    if (!usuario) {
+      console.log('❌ Usuário não encontrado:', email);
+      return res.status(401).json({ error: 'Email ou senha inválidos' });
+    }
+    
+    // Agora pode verificar o campo 'ativo' com segurança
     if (usuario.ativo === 0) {
-        console.log('❌ Conta desativada:', email);
-        return res.status(401).json({ error: 'Conta desativada. Contacte o administrador.' });
+      console.log('❌ Conta desativada:', email);
+      return res.status(401).json({ error: 'Conta desativada. Contacte o administrador.' });
     }
     
     console.log('✅ Usuário encontrado:', usuario.email);
     
+    // Verificar senha
     const senhaValida = Usuario.verificarSenha(senha, usuario.senha);
     
     if (!senhaValida) {
@@ -36,6 +44,7 @@ exports.login = (req, res) => {
       return res.status(401).json({ error: 'Email ou senha inválidos' });
     }
     
+    // Gerar token
     const token = jwt.sign(
       { id: usuario.id, email: usuario.email, role: usuario.role },
       SECRET_KEY,

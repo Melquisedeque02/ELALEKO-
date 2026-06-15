@@ -20,7 +20,7 @@ const Home = () => {
               Crie, personalize e valide convites de forma simples e segura.
               Ideal para casamentos, aniversários, formaturas e qualquer evento
               que exija controle de entrada.
-            </p>
+            </p>{/*  
             <div className="hero-buttons">
               <Link to="/registro" className="btn btn-primary">
                 Criar conta <ArrowRight size={18} />
@@ -28,7 +28,7 @@ const Home = () => {
               <Link to="/login" className="btn btn-outlinee">
                 Já tenho conta
               </Link>
-            </div>
+            </div>*/}
             <div className="hero-stats">
               <div className="stat">
                 <span className="stat-number">500+</span>
