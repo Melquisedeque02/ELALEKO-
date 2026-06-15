@@ -13,8 +13,8 @@ const authRoutes = require('./routes/authRoutes');
 const eventosRoutes = require('./routes/eventosRoutes');
 const adminRoutes = require('./routes/adminRoutes');
 const organizadorRoutes = require('./routes/organizadorRoutes');
-const creditosRoutes = require('./routes/creditosRoutes');
-const iaRoutes = require('./routes/iaRoutes');
+//const creditosRoutes = require('./routes/creditosRoutes');
+//const iaRoutes = require('./routes/iaRoutes');
 const tipoEventoRoutes = require('./routes/tipoEventoRoutes');
 
 
@@ -44,8 +44,8 @@ app.use('/api/auth', authRoutes);
 app.use('/api/eventos', eventosRoutes);
 app.use('/api/admin', adminRoutes);
 app.use('/api/organizador', organizadorRoutes);
-app.use('/api/creditos', creditosRoutes);
-app.use('/api/ia', iaRoutes);
+//app.use('/api/creditos', creditosRoutes);
+//app.use('/api/ia', iaRoutes);
 app.use('/api/tipos-evento', tipoEventoRoutes);
 // Servir arquivos estáticos da pasta uploads
 app.use('/uploads', express.static(path.join(__dirname, '../uploads')));

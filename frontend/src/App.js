@@ -18,9 +18,9 @@ import OrganizadorDashboard from './pages/OrganizadorDashboard';
 import EventoConvitesPage from './pages/EventoConvitesPage';
 import AdminUsersPage from './pages/AdminUsersPage';
 import AdminNovoUsuarioPage from './pages/AdminNovoUsuarioPage';
-import ComprarCreditosPage from './pages/ComprarCreditosPage';
-import CriarTemplateIAPage from './pages/CriarTemplateIAPage';
-import AdminCreditosPage from './pages/AdminCreditosPage';
+//import ComprarCreditosPage from './pages/ComprarCreditosPage';
+//import CriarTemplateIAPage from './pages/CriarTemplateIAPage';
+//import AdminCreditosPage from './pages/AdminCreditosPage';
 import ForgotPasswordPage from './pages/ForgotPasswordPage';
 import ResetPasswordPage from './pages/ResetPasswordPage';
 
