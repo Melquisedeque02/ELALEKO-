@@ -4,7 +4,7 @@
   "description": "Backend para sistema de convites com QR Code",
   "main": "src/app.js",
   "scripts": {
-    "start": "node src/app.js",
+    "start": "NODE_OPTIONS=\"--max-old-space-size=512\" node src/app.js",
     "dev": "nodemon src/app.js"
   },
   "dependencies": {
