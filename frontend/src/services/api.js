@@ -9,9 +9,8 @@ const getApiUrl = () => {
     return 'http://localhost:5000/api';
   }
   
-  // Se estiver acessando pelo IP da rede (iPhone, tablet, etc.)
-  // Usa o mesmo IP da página atual, mas na porta 5000
-  return `http://${hostname}:5000/api`;
+  // Produção
+  return 'https://elaleko.api.milvendas.ao/api';
 };
 
 const API_BASE_URL = getApiUrl();
