@@ -1,0 +1,9 @@
+---
+deployment:
+  tasks:
+    - export BACKEND_SRC=$HOME/repositories/Elaleko/backend
+    - export BACKEND_DEST=$HOME/elaleko.api.milvendas.ao
+    - /bin/cp -r $BACKEND_SRC/. $BACKEND_DEST/
+    - source $HOME/nodevenv/elaleko.api.milvendas.ao/20/bin/activate && cd $BACKEND_DEST && PUPPETEER_SKIP_DOWNLOAD=true npm install --production
+    - kill $(pgrep -f "elaleko.api.milvendas.ao") || true
+    - /bin/cp -r $HOME/repositories/Elaleko/frontend/build/. $HOME/elaleko.milvendas.ao/
